@@ -32,9 +32,8 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
-ns=$(cat /etc/xray/dns)
-pub=$(cat /etc/slowdns/server.pub)
-sleep 1
+
+sleep 0.5
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
@@ -83,9 +82,7 @@ echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
 echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
 echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
 echo -e "\033[0;34m◇━━━━━━━━━━━━━━━━━◇\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Host        : $ns" | tee -a /etc/log-create-user.log
-echo -e "Host Dns   : $sldomain" | tee -a /etc/log-create-user.log
-echo -e "Pubkey      : $pub" | tee -a /etc/log-create-user.log
+echo -e "Host        : $domen" | tee -a /etc/log-create-user.log
 echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
 echo -e "SSH-WS      : $portsshws" | tee -a /etc/log-create-user.log
 echo -e "SSH-SSL-WS  : $wsssl" | tee -a /etc/log-create-user.log
