@@ -49,7 +49,6 @@ wget -O auto-reboot "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/auto-
 wget -O restart "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/restart.sh"
 wget -O bw "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/bw.sh"
 wget -O genssl "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/genssl.sh"
-wget -O add4 "https://raw.githubusercontent.com/ahm4dn/v4/main/add4.sh"
 echo -e "$BG[INFO]$NC $CYANUpdate Telah Selesai$NC"
 cd
 read -n 1 -s -r -p "Press any key to back on menu"
