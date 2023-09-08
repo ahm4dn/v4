@@ -156,19 +156,11 @@ wget https://raw.githubusercontent.com/ahm4dn/v4/main/sshws/insshws.sh && chmod 
 clear
 #pasang rc clone ssh ovpn 
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-echo -e "$green      Memasang backup server              $NC" 
+echo -e "$green      Memasang Backup Server        $NC" 
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
 sleep 2 
 clear 
 wget https://raw.githubusercontent.com/ahm4dn/v4/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
-clear
-#Instal slowdns
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green          Install SLDNS              $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
-clear
-wget https://raw.githubusercontent.com/Andyvpn/Autoscript-by-azi/main/autoscript-ssh-slowdns-main/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 clear
 
 #Instal udp
@@ -216,7 +208,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "=====================-[ Created => FELIKU BOSS ]-===================="
+echo "=====================-[ Created By TREADM STORE ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -257,7 +249,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Created By FELIKU ]-==============="
+echo "===============-[ Script Created By TREADM STORE ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
