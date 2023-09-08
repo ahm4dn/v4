@@ -305,8 +305,8 @@ case $opt in
 7) clear ; running ;;
 8) clear ; nano /etc/issue.net ;;
 9) clear ; menu-backup ;;
-10) clear ; wget https://raw.githubusercontent.com/jaka1m/bot_panel/main/geo.sh && chmod +x geo.sh && ./geo.sh ;;
-11) clear ; add-host ;; 
+10) clear ; add-host ;;
+11) clear ; certv2ray ;; 
 12) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 00) exit ;;
 esac
