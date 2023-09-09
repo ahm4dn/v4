@@ -152,8 +152,29 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 1
 clear
 wget https://raw.githubusercontent.com/ahm4dn/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-wget https://raw.githubusercontent.com/ahm4dn/v4/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green          Install SSH Wesocket      $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 1
+clear
+wget -O /usr/bin/ws "https://raw.githubusercontent.com/ahm4dn/v4/main/sshws/ws" >/dev/null 2>&1
+    wget -O /usr/bin/tun.conf "https://raw.githubusercontent.com/ahm4dn/v4/main/sshws/tun.conf" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "https://raw.githubusercontent.com/ahm4dn/v4/main/sshws/ws.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws.service
+    chmod +x /usr/bin/ws
+    chmod 644 /usr/bin/tun.conf
+systemctl disable ws
+systemctl stop ws
+systemctl enable ws
+systemctl start ws
+systemctl restart ws
+
+apt-get install dropbear -y > /dev/null 2>&1
+wget -q -O /etc/default/dropbear "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/dropbear.conf"
+chmod +x /etc/default/dropbear
+/etc/init.d/dropbear restart
+/etc/init.d/dropbear status
 #pasang rc clone ssh ovpn 
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
 echo -e "$green      Memasang Backup Server        $NC" 
@@ -235,8 +256,8 @@ echo "   - Timezone		: Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
 echo "   - Fail2Ban		: [ON]"  | tee -a log-install.txt
 echo "   - Dflate		: [ON]"  | tee -a log-install.txt
 echo "   - IPtables		: [ON]"  | tee -a log-install.txt
-echo "   - Auto-Reboot		: [ON]"  | tee -a log-install.txt
-echo "   - IPv6			: [OFF]"  | tee -a log-install.txt
+echo "   - Auto-Reboot          : [ON]"  | tee -a log-install.txt
+echo "   - IPv6		        : [OFF]"  | tee -a log-install.txt
 echo "   - Autoreboot On	: $aureb:00 $gg GMT +7" | tee -a log-install.txt
 echo "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
@@ -259,5 +280,6 @@ rm /root/insshws.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
-read -n 1 -s -r -p "Press enter to menu"
+echo -e "Back To Menu 2 Second
+sleep 2
 menu
