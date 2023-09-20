@@ -10,7 +10,6 @@ sleep 1
 
 # download script
 cd /usr/bin
-# menu
 wget -O mbot "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/mbot.sh"
 wget -O menu "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-vmess.sh"
@@ -20,8 +19,6 @@ wget -O clearcache "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/clearc
 wget -O menu-trgo "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-trojan.sh"
 wget -O menu-trial "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-trial.sh"
-
-# menu ssh ovpn
 wget -O menu-ssh "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-ssh.sh"
 wget -O usernew "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/usernew.sh"
 wget -O trial "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/trial.sh"
@@ -35,8 +32,8 @@ wget -O ceklim "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/ceklim.sh"
 wget -O tendang "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/tendang.sh"
 wget -O user-lock "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/user-lock.sh"
 wget -O user-unlock "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/user-unlock.sh"
-
-# menu system
+wget -O cek-ws "https://raw.githubusercontent.com/ahm4dn/v4/main/xray/cek-ws.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/ahm4dn/v4/main/xray/cek-tr.sh"
 wget -O menu-set "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-set.sh"
 wget -O menu-domain "https://raw.githubusercontent.com/ahm4dn/v4/main/menu/menu-domain.sh"
 wget -O add-host "https://raw.githubusercontent.com/ahm4dn/v4/main/ssh/add-host.sh"
