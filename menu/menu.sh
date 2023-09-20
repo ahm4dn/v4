@@ -277,14 +277,14 @@ echo -e "   ${z}│  ${y} SSH     VMESS       VLESS      TROJAN"
 echo -e "   ${z}│  ${IWhite}  $ssh1        $vma           $vla           $tra" 
 echo -e "   ${z}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m${NC}" 
 echo -e "  ${IWhite} SSH ${NC}: $ressh"" ${IWhite} NGINX ${NC}: $resngx"" ${IWhite}  XRAY ${NC}: $resv2r"" ${IWhite} TROJAN ${NC}: $resv2r"
-echo -e "${IWhite}     STUNNEL ${NC}: $resst" "${IWhite} DROPBEAR ${NC}: $resdbr" "${IWhite} SSH-WS ${NC}: $ressshws"
+echo -e "${IWhite}     STUNNEL ${NC}: $resst" "${IWhite} DROPBEAR ${NC}: $resdbr" "${IWhite} SSH-WS ${NC}: ${green}ON"
 echo -e "  ${z}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m${NC}"
 echo -e "  ${z}│ [${r}01${NC}] ${z}SSH    MENU  ${NC}       ""[${r}07${NC}] ${z}STATUS RUNNING     ${NC}"
 echo -e "  ${z}│ [${r}02${NC}] ${z}VMESS  MENU  ${NC}       ""[${r}08${NC}] ${z}CHANGE BANNER      ${NC}"
 echo -e "  ${z}│ [${r}03${NC}] ${z}VLESS  MENU  ${NC}       ""[${r}09${NC}] ${z}BACKUP & RESTORE   ${NC}"
 echo -e "  ${z}│ [${r}04${NC}] ${z}TROJAN MENU  ${NC}       ""[${r}10${NC}] ${z}ADD DOMAIN/HOST    ${NC}"
 echo -e "  ${z}│ [${r}05${NC}] ${z}SETING MENU  ${NC}       ""[${r}11${NC}] ${z}CERT SSL           ${NC}"        
-echo -e "  ${z}│ [${r}06${NC}] ${z}UPDATE SCRIPT${NC}       ""[${r}00${NC}] ${z}EXIT               ${NC}"
+echo -e "  ${z}│ [${r}06${NC}] ${z}UPDATE SCRIPT${NC}       ""[${r}12${NC}] ${z}EXIT               ${NC}"
 echo -e "  ${z}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m${NC}"
 echo -e "${z}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m${NC}" 
 echo -e "${z}│${IWhite}HARI ini=${NC}${r} $ttoday${NC} ${IWhite}KEMARIN=${NC}${r} $tyest${NC} ${IWhite}BULAN=${NC}${r} $tmon${NC}"
@@ -309,6 +309,5 @@ case $opt in
 9) clear ; menu-backup ;;
 10) clear ; add-host ;;
 11) clear ; certv2ray ;; 
-12) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
-00) exit ;;
+12) clear ; exit ;;
 esac
