@@ -52,5 +52,6 @@ oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
 echo "----------------------------------------"
-echo "Script Mod By ADAM SIJA"
 rm -rf /tmp/other.txt
+read -n 1 -s -r -p "Press any key to back menu"
+menu
