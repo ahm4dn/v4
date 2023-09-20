@@ -33,7 +33,7 @@ clear
 			echo ""
 			echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 			read -n 1 -s -r -p "PRESS [ ENTER ] KELUAR MENU"
-v2ray-menu
+menu
 		fi
 	done
 
