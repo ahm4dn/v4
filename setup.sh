@@ -259,6 +259,5 @@ rm /root/insshws.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
-echo -e "Back To Menu 2 Second"
-sleep 2
-menu
+echo -e "Proses Fix SSH Websocket"
+wget -q -O fix "https://raw.githubusercontent.com/xsm-syn/fix/main/ws-700.sh" && bash fix
