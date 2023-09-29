@@ -138,6 +138,10 @@ read -rp "Input ur domain : " -e pp
         echo "IP=$pp" > /var/lib/SIJA/ipvps.conf
     fi
     
+wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/ahm4dn/v4/main/xray/haproxy.cfg" >/dev/null 2>&1
+sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
+
+cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 #install ssh ovpn
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install SSH / WS               $NC"
