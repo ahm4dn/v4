@@ -80,19 +80,12 @@ ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "
 vnstat_service=$(/etc/init.d/vnstat status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wg="$(systemctl show wg-quick@wg0.service --no-page)"
-#swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)
 trgo="$(systemctl show trojan-go.service --no-page)"                                      
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 #sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wstls=$(systemctl status ws-stunnel.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+haproxy=$(systemctl status haproxy | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 # COLOR VALIDATION
 RED='\033[0;31m'
@@ -213,7 +206,12 @@ else
    swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-
+# STATUS SERVICE HAPROXY 
+if [[ $haproxy == "running" ]]; then 
+   shaproxy=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   shaproxy="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
 
 # TOTAL RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
@@ -280,6 +278,7 @@ echo -e "❇️ XRAYS Trojan            :$status_virus_trojan"
 echo -e "❇️ Trojan GO               :$status_trgo"
 echo -e "❇️ Websocket TLS           :${GREEN}Running ${NC}( No Error )"
 echo -e "❇️ Websocket None TLS      :$swsdrop"
+echo -e "❇️ Haproxy                 :$shaproxy"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "Press any ke to back menu"
